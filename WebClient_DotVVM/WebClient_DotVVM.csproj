@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="**/*.dothtml;**/*.dotmaster;**/*.dotcontrol" Exclude="obj/**/*.*;bin/**/*.*" CopyToPublishDirectory="Always" />
+    <None Remove="**/*.dothtml;**/*.dotmaster;**/*.dotcontrol" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dotvvm_serialized_config.json.tmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DotVVM.AspNetCore" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.8.1" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.8.1" />
+
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+</Project>
