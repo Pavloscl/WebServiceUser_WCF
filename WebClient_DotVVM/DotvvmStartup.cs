@@ -19,6 +19,8 @@ namespace WebClient_DotVVM
         private void ConfigureRoutes(DotvvmConfiguration config, string applicationPath)
         {
             config.RouteTable.Add("Default", "", "Views/Default.dothtml");
+            config.RouteTable.Add("Edit", "edit/{Id}", "Views/CRUD/Edit.dothtml");
+            config.RouteTable.Add("Detail", "detail/{Id}", "Views/CRUD/Detail.dothtml");
             config.RouteTable.AutoDiscoverRoutes(new DefaultRouteStrategy(config));    
         }
 
@@ -49,8 +51,9 @@ namespace WebClient_DotVVM
             });
         }
 
-		public void ConfigureServices(IDotvvmServiceCollection options)
+        public void ConfigureServices(IDotvvmServiceCollection options)
         {
+            options.Services.AddTransient<UserService>();
             options.AddDefaultTempStorages("temp");
 		}
     }

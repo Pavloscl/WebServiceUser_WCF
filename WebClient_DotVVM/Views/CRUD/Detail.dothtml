@@ -1,0 +1,8 @@
+﻿@viewModel WebClient_DotVVM.ViewModels.CRUD.DetailViewModel, WebClient_DotVVM
+@masterPage Views/MasterPage.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+
+</dot:Content>
+
